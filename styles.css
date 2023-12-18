@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('stw.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    /* filter: blur(5px); */
+    z-index: -1;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 10px solid #3498db; /* Border color: #3498db, you can change it */
+  }
+  
+  #stopwatch {
+    background: linear-gradient(to right, #000, #333); /* Black gradient from left to right */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust the max-width to your desired size */
+    width: 100%;
+    margin-right: auto; /* Shift the stopwatch towards the left */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards, colorChange 0.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorChange {
+    from {
+      background-color: #333;
+    }
+    to {
+      background-color: #444;
+    }
+  }
+  
+  #time {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff; /* Text color changed to white for better visibility on dark background */
+  }
+  
+  #lapTime {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ddd; /* Text color changed to a lighter shade of white */
+  }
+  
+  #controls button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  #controls button:hover {
+    background-color: #27ae60;
+    transform: scale(1.1);
+  }
+  
+  #controls button:active {
+    transform: scale(0.9);
+  }
+  
+  .lap {
+    font-size: 1em;
+    color: #ccc; /* Lap time text color changed to a lighter shade of white */
+    margin-bottom: 5px;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .lap-record {
+    animation: colorChange 0.5s ease-in-out infinite alternate;
+  }
+  
